@@ -4,8 +4,9 @@ function add(id)
 	var x = window.localStorage.getItem(key);
 	x=x*1+1;
 	window.localStorage.setItem(key, x);
-	alert('Items in your cart: ' + cart_get_number_of_items());
+	//alert('Items in your cart: ' + cart_get_number_of_items());
 	update_orders_input();
+	update_orders_button();
 }
 
 function something() 
@@ -38,6 +39,11 @@ function update_orders_input()
 	$('#orders_input').val(orders);
 }
 
+function update_orders_button()
+{
+	var text = 'Cart(' + cart_get_number_of_items() + ')';
+	$('#orders_button').val(text);
+}
 
 function cart_get_orders() 
 {
